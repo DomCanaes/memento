@@ -1,0 +1,146 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    box-sizing: border-box;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  html, body, #root {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    background-color: #000;
+    color: #fff;
+    font-family: -apple-system, BlinkMacSystemFont, 'Inter', system-ui, sans-serif;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  body {
+    overscroll-behavior: none;
+  }
+
+  ::-webkit-scrollbar {
+    width: 4px;
+  }
+  ::-webkit-scrollbar-track {
+    background: #0a0a0a;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #2a2a2a;
+    border-radius: 2px;
+  }
+
+  input, textarea {
+    background: #1a1a1a;
+    color: #fff;
+    border: 1px solid #2a2a2a;
+    outline: none;
+    font-family: inherit;
+  }
+
+  input:focus, textarea:focus {
+    border-color: #dc2626;
+  }
+
+  input[type="time"]::-webkit-calendar-picker-indicator {
+    filter: invert(1);
+    opacity: 0.4;
+  }
+
+  input[type="date"]::-webkit-calendar-picker-indicator {
+    filter: invert(1);
+    opacity: 0.4;
+  }
+}
+
+@layer utilities {
+  .safe-top {
+    padding-top: env(safe-area-inset-top);
+  }
+  .safe-bottom {
+    padding-bottom: env(safe-area-inset-bottom);
+  }
+  .pb-nav {
+    padding-bottom: calc(72px + env(safe-area-inset-bottom));
+  }
+}
+
+/* Sand timer animation */
+.sand-timer-top {
+  transform-origin: top center;
+  animation: deplete-sand 30s linear infinite;
+}
+
+.sand-timer-bot {
+  transform-origin: bottom center;
+  animation: fill-sand 30s linear infinite;
+}
+
+@keyframes deplete-sand {
+  0% { transform: scaleY(1); }
+  100% { transform: scaleY(0); }
+}
+
+@keyframes fill-sand {
+  0% { transform: scaleY(0); }
+  100% { transform: scaleY(1); }
+}
+
+.sand-particle {
+  animation: fall-particle 1s ease-in infinite;
+}
+
+.sand-particle:nth-child(2) {
+  animation-delay: 0.33s;
+}
+
+.sand-particle:nth-child(3) {
+  animation-delay: 0.66s;
+}
+
+@keyframes fall-particle {
+  0% { transform: translateY(-4px); opacity: 0; }
+  20% { opacity: 1; }
+  80% { opacity: 0.8; }
+  100% { transform: translateY(6px); opacity: 0; }
+}
+
+/* Month grid */
+.month-block {
+  aspect-ratio: 1;
+  transition: opacity 0.1s;
+}
+
+/* Slider */
+input[type="range"] {
+  -webkit-appearance: none;
+  appearance: none;
+  height: 4px;
+  background: #2a2a2a;
+  border-radius: 2px;
+  border: none;
+  outline: none;
+  width: 100%;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: #dc2626;
+  cursor: pointer;
+}
+
+input[type="range"]::-moz-range-thumb {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: #dc2626;
+  cursor: pointer;
+  border: none;
+}
