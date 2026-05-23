@@ -6,7 +6,7 @@ import type { MonkModeState } from '../types';
 
 export function useNotificationScheduler(monkMode: MonkModeState) {
   useEffect(() => {
-    if (Notification.permission !== 'granted') return;
+    if (typeof Notification === 'undefined' || Notification.permission !== 'granted') return;
 
     const settings = getSettings();
     const todaySignals = getDailySignals(todayStr());

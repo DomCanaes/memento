@@ -94,7 +94,7 @@ export async function markNotificationFired(id: string): Promise<void> {
 }
 
 export async function checkAndFireNotifications(): Promise<void> {
-  if (Notification.permission !== 'granted') return;
+  if (typeof Notification === 'undefined' || Notification.permission !== 'granted') return;
   const queue = await getNotificationQueue();
   const now = Date.now();
   let changed = false;
