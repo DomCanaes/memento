@@ -4,7 +4,7 @@ interface Props {
 }
 
 export function MonthGrid({ totalMonths, monthsLived }: Props) {
-  const COLS = totalMonths <= 120 ? 11 : 28;
+  const COLS = 28;
   const blocks = Array.from({ length: totalMonths });
 
   return (
