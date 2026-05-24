@@ -5,6 +5,7 @@ import type {
   LossClock,
   MonkModeState,
   ReflectionEntry,
+  VerdictEntry,
 } from '../types';
 import { DEFAULT_NOTIFICATION_SCHEDULE, DEFAULT_FRANKL_ANCHORS, MONK_MODE_DEFAULT_DAYS } from '../constants/defaults';
 
@@ -15,6 +16,7 @@ const KEYS = {
   lossClocks: 'memento_loss_clocks',
   reflections: 'memento_reflections',
   franklAnchors: 'memento_frankl_anchors',
+  verdicts: 'memento_verdicts',
 } as const;
 
 function get<T>(key: string, fallback: T): T {
@@ -96,4 +98,12 @@ export function getFranklAnchors(): FranklAnchor[] {
 
 export function setFranklAnchors(anchors: FranklAnchor[]): void {
   set(KEYS.franklAnchors, anchors);
+}
+
+export function getVerdicts(): VerdictEntry[] {
+  return get<VerdictEntry[]>(KEYS.verdicts, []);
+}
+
+export function setVerdicts(entries: VerdictEntry[]): void {
+  set(KEYS.verdicts, entries);
 }

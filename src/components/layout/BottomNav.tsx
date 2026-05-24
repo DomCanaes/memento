@@ -3,6 +3,7 @@ import { Link, useLocation } from 'react-router-dom';
 const TABS = [
   { path: '/', label: 'Home', icon: SkullIcon },
   { path: '/signals', label: 'Focus', icon: SignalIcon },
+  { path: '/verdict', label: 'Verdict', icon: VerdictIcon },
   { path: '/loss', label: 'Clock', icon: TimerIcon },
   { path: '/monk', label: 'Monk', icon: MonkIcon },
   { path: '/reflect', label: 'Reflect', icon: MoonIcon },
@@ -78,6 +79,14 @@ function MoonIcon({ size }: IconProps) {
   return (
     <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
       <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+    </svg>
+  );
+}
+
+function VerdictIcon({ size }: IconProps) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+      <path d="M12 3v18M5 8l7-5 7 5M5 16l7 5 7-5"/>
     </svg>
   );
 }

@@ -72,6 +72,16 @@ export interface NotificationSchedule {
   monkModeDailyTime: string; // HH:mm
 }
 
+export type VerdictOutcome = 'won' | 'mediocrity';
+
+export interface VerdictEntry {
+  id: string;
+  date: string; // YYYY-MM-DD
+  outcome: VerdictOutcome;
+  proof: string;
+  submittedAt: string;
+}
+
 export interface AppSettings {
   notificationSchedule: NotificationSchedule;
   hasSeenFirstOpenModal: boolean;

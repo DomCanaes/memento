@@ -11,6 +11,7 @@ import { LossClockScreen } from './screens/LossClockScreen';
 import { MonkModeScreen } from './screens/MonkModeScreen';
 import { ReflectionScreen } from './screens/ReflectionScreen';
 import { SettingsScreen } from './screens/SettingsScreen';
+import { VerdictScreen } from './screens/VerdictScreen';
 import { useFirstOpen } from './hooks/useFirstOpen';
 import { useFranklAnchors } from './hooks/useFranklAnchors';
 import { useMonkMode } from './hooks/useMonkMode';
@@ -45,6 +46,7 @@ function AppInner() {
           <Route path="/loss" element={<LossClockScreen onRegretFilter={handleRegretFilter} />} />
           <Route path="/monk" element={<MonkModeScreen />} />
           <Route path="/reflect" element={<ReflectionScreen />} />
+          <Route path="/verdict" element={<VerdictScreen />} />
           <Route path="/settings" element={<SettingsScreen />} />
         </Routes>
       </div>
