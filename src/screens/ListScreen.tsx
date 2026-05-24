@@ -61,12 +61,10 @@ export function ListScreen() {
             <p className="text-red-light font-black text-base uppercase tracking-widest">
               They're all laughing at you.
             </p>
-            <p className="text-text-muted text-sm">
-              Every single one of them thinks they're better than you.
+            <p className="text-white text-sm mt-3 leading-relaxed">
+              "Success is the only revenge."
             </p>
-            <p className="text-text-muted text-sm">
-              Prove them wrong. That's the only response that matters.
-            </p>
+            <p className="text-text-muted text-xs mt-1">— Alex Hormozi</p>
           </div>
         )}
 
