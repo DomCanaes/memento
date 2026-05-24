@@ -11,7 +11,7 @@ type Tab = 'life' | 'free';
 
 export function DashboardScreen() {
   const { monthsLived, ageInYears, perceivedPercent, remainingMonths, freeTimeUsed, freeTimeRemaining } = useMortality();
-  const [tab, setTab] = useState<Tab>('life');
+  const [tab, setTab] = useState<Tab>('free');
 
   return (
     <Screen>
