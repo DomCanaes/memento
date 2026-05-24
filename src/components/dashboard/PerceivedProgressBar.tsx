@@ -12,7 +12,7 @@ export function PerceivedProgressBar({ ageInYears, perceivedPercent }: Props) {
     <div className="px-4">
       <div>
         <div className="flex justify-between items-baseline mb-1.5">
-          <span className="text-xs text-text-muted uppercase tracking-widest">Your life already feels half over.</span>
+          <span className="text-xs text-text-muted uppercase tracking-widest">Your life is already half over.</span>
           <span className="text-xs text-red-light font-mono font-bold">{pct.toFixed(1)}%</span>
         </div>
         <div className="h-2 bg-elevated rounded-full overflow-hidden">
