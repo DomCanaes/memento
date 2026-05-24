@@ -72,6 +72,12 @@ export interface NotificationSchedule {
   monkModeDailyTime: string; // HH:mm
 }
 
+export interface DoubterEntry {
+  id: string;
+  name: string;
+  addedAt: string;
+}
+
 export type VerdictOutcome = 'won' | 'mediocrity';
 
 export interface VerdictEntry {

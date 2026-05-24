@@ -12,6 +12,7 @@ import { MonkModeScreen } from './screens/MonkModeScreen';
 import { ReflectionScreen } from './screens/ReflectionScreen';
 import { SettingsScreen } from './screens/SettingsScreen';
 import { VerdictScreen } from './screens/VerdictScreen';
+import { ListScreen } from './screens/ListScreen';
 import { useFirstOpen } from './hooks/useFirstOpen';
 import { useFranklAnchors } from './hooks/useFranklAnchors';
 import { useMonkMode } from './hooks/useMonkMode';
@@ -47,6 +48,7 @@ function AppInner() {
           <Route path="/monk" element={<MonkModeScreen />} />
           <Route path="/reflect" element={<ReflectionScreen />} />
           <Route path="/verdict" element={<VerdictScreen />} />
+          <Route path="/list" element={<ListScreen />} />
           <Route path="/settings" element={<SettingsScreen />} />
         </Routes>
       </div>

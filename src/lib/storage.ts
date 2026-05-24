@@ -1,6 +1,7 @@
 import type {
   AppSettings,
   DailySignalLog,
+  DoubterEntry,
   FranklAnchor,
   LossClock,
   MonkModeState,
@@ -17,6 +18,7 @@ const KEYS = {
   reflections: 'memento_reflections',
   franklAnchors: 'memento_frankl_anchors',
   verdicts: 'memento_verdicts',
+  doubters: 'memento_doubters',
 } as const;
 
 function get<T>(key: string, fallback: T): T {
@@ -106,4 +108,12 @@ export function getVerdicts(): VerdictEntry[] {
 
 export function setVerdicts(entries: VerdictEntry[]): void {
   set(KEYS.verdicts, entries);
+}
+
+export function getDoubters(): DoubterEntry[] {
+  return get<DoubterEntry[]>(KEYS.doubters, []);
+}
+
+export function setDoubters(entries: DoubterEntry[]): void {
+  set(KEYS.doubters, entries);
 }
