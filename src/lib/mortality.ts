@@ -1,4 +1,4 @@
-import { DOB, LIFE_MONTHS, HOURS_PER_MONTH, PERCEIVED_BASE, PERCEIVED_DENOMINATOR } from '../constants/mortality';
+import { DOB, LIFE_MONTHS, FREE_TIME_MONTHS, HOURS_PER_MONTH, PERCEIVED_BASE, PERCEIVED_DENOMINATOR } from '../constants/mortality';
 
 export function getMonthsLived(): number {
   const birth = new Date(DOB);
@@ -36,4 +36,13 @@ export function getRemainingMonths(): number {
 
 export function getRemainingLifeHours(): number {
   return getRemainingMonths() * HOURS_PER_MONTH;
+}
+
+export function getFreeTimeMonthsUsed(): number {
+  const monthsLived = getMonthsLived();
+  return Math.min(FREE_TIME_MONTHS, Math.round((monthsLived / LIFE_MONTHS) * FREE_TIME_MONTHS));
+}
+
+export function getFreeTimeMonthsRemaining(): number {
+  return Math.max(0, FREE_TIME_MONTHS - getFreeTimeMonthsUsed());
 }

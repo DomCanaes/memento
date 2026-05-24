@@ -5,6 +5,8 @@ import {
   getPerceivedPercent,
   getRemainingMonths,
   getRemainingLifeHours,
+  getFreeTimeMonthsUsed,
+  getFreeTimeMonthsRemaining,
 } from '../lib/mortality';
 
 export function useMortality() {
@@ -14,5 +16,7 @@ export function useMortality() {
     perceivedPercent: getPerceivedPercent(),
     remainingMonths: getRemainingMonths(),
     remainingLifeHours: getRemainingLifeHours(),
+    freeTimeUsed: getFreeTimeMonthsUsed(),
+    freeTimeRemaining: getFreeTimeMonthsRemaining(),
   }), []);
 }
