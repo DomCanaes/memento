@@ -78,13 +78,15 @@ export interface DoubterEntry {
   addedAt: string;
 }
 
-export type VerdictOutcome = 'won' | 'mediocrity';
-
 export interface VerdictEntry {
   id: string;
   date: string; // YYYY-MM-DD
-  outcome: VerdictOutcome;
-  proof: string;
+  sacrifice: boolean;
+  experiment: boolean;
+  speed: boolean;
+  sacrificeNote?: string;
+  experimentNote?: string;
+  speedNote?: string;
   submittedAt: string;
 }
 

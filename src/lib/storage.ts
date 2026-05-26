@@ -18,6 +18,7 @@ const KEYS = {
   reflections: 'memento_reflections',
   franklAnchors: 'memento_frankl_anchors',
   verdicts: 'memento_verdicts',
+  verdictHighestStreak: 'memento_verdict_highest_streak',
   doubters: 'memento_doubters',
 } as const;
 
@@ -108,6 +109,14 @@ export function getVerdicts(): VerdictEntry[] {
 
 export function setVerdicts(entries: VerdictEntry[]): void {
   set(KEYS.verdicts, entries);
+}
+
+export function getHighestStreak(): number {
+  return get<number>(KEYS.verdictHighestStreak, 0);
+}
+
+export function setHighestStreak(n: number): void {
+  set(KEYS.verdictHighestStreak, n);
 }
 
 export function getDoubters(): DoubterEntry[] {
